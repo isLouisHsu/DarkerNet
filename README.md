@@ -127,7 +127,7 @@ sudo make uninstall
 - 2019.05.14: modify layer typedef, pull cuda output each layer
 - 2019.05.15: `list_delete`, `list_bsort`, `free_current_node`
 - 2019.05.16: `list_check`, `list_attr`, `copy_image`
-- 2019.05.22: add `connected_local`.
+- 2019.05.22: add `connected_local`; `use_bias` of BatchNorm layer;
 
 
 ## Notice
