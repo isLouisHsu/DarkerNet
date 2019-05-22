@@ -141,6 +141,10 @@ struct layer{
     int outputs;
     int nweights;
     int nbiases;
+    
+    // 2019.5.22
+    int use_bias;
+
     int extra;
     int truths;
     int h,w,c;
