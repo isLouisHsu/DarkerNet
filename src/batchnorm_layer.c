@@ -3,11 +3,13 @@
 #include "blas.h"
 #include <stdio.h>
 
-layer make_batchnorm_layer(int batch, int w, int h, int c)
+layer make_batchnorm_layer(int batch, int w, int h, int c, int use_bias)
 {
     fprintf(stderr, "batchnorm               %4d x%4d x%4d   ->  %4d x%4d x%4d\n", w,h,c,w,h,c);
     layer l = {0};
     l.type = BATCHNORM;
+    l.use_bias = use_bias;
+
     l.batch = batch;
     l.h = l.out_h = h;
     l.w = l.out_w = w;
@@ -31,6 +33,9 @@ layer make_batchnorm_layer(int batch, int w, int h, int c)
 
     l.rolling_mean = calloc(c, sizeof(float));
     l.rolling_variance = calloc(c, sizeof(float));
+
+    l.x = calloc(l.batch*l.outputs, sizeof(float));
+    l.x_norm = calloc(l.batch*l.outputs, sizeof(float));
 
     l.forward = forward_batchnorm_layer;
     l.backward = backward_batchnorm_layer;
@@ -189,12 +194,14 @@ void backward_batchnorm_layer(layer l, network net)
 
 void pull_batchnorm_layer(layer l)
 {
+    cuda_pull_array(l.biases_gpu, l.biases, l.c);
     cuda_pull_array(l.scales_gpu, l.scales, l.c);
     cuda_pull_array(l.rolling_mean_gpu, l.rolling_mean, l.c);
     cuda_pull_array(l.rolling_variance_gpu, l.rolling_variance, l.c);
 }
 void push_batchnorm_layer(layer l)
 {
+    cuda_push_array(l.biases_gpu, l.biases, l.c);
     cuda_push_array(l.scales_gpu, l.scales, l.c);
     cuda_push_array(l.rolling_mean_gpu, l.rolling_mean, l.c);
     cuda_push_array(l.rolling_variance_gpu, l.rolling_variance, l.c);
