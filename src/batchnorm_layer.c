@@ -58,13 +58,14 @@ layer make_batchnorm_layer(int batch, int w, int h, int c)
 
     l.x_gpu = cuda_make_array(l.output, l.batch*l.outputs);
     l.x_norm_gpu = cuda_make_array(l.output, l.batch*l.outputs);
-    #ifdef CUDNN
+
+#ifdef CUDNN
     cudnnCreateTensorDescriptor(&l.normTensorDesc);
     cudnnCreateTensorDescriptor(&l.dstTensorDesc);
     cudnnSetTensor4dDescriptor(l.dstTensorDesc, CUDNN_TENSOR_NCHW, CUDNN_DATA_FLOAT, l.batch, l.out_c, l.out_h, l.out_w); 
     cudnnSetTensor4dDescriptor(l.normTensorDesc, CUDNN_TENSOR_NCHW, CUDNN_DATA_FLOAT, 1, l.out_c, 1, 1); 
+#endif
 
-    #endif
 #endif
     return l;
 }
@@ -127,9 +128,22 @@ void normalize_delta_cpu(float *x, float *mean, float *variance, float *mean_del
     }
 }
 
-void resize_batchnorm_layer(layer *layer, int w, int h)
+void resize_batchnorm_layer(layer *l, int w, int h)
 {
-    fprintf(stderr, "Not implemented\n");
+    fprintf(stderr, "Not implemented\n");    
+    
+//     l->w = w;
+//     l->h = h;
+//     l->inputs = l->w*l->h*l->c;
+
+//     l->out_w = w;
+//     l->out_h = h;
+//     l->outputs = l->out_w*l->out_h*l->out_c;
+    
+//     l->output = realloc(l->output, l->batch*l->outputs*sizeof(float));
+//     l->delta  = realloc(l->delta,  l->batch*l->outputs*sizeof(float));
+// #ifdef GPU
+// #endif
 }
 
 void forward_batchnorm_layer(layer l, network net)

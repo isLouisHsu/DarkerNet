@@ -410,9 +410,14 @@ int resize_network(network *net, int w, int h)
         // 2019/5/22
         }else if(l.type == CONNECTED_LOCAL){
             resize_connected_local_layer(&l);
+        // 2019/5/22
+        }else if(l.type == BATCHNORM){
+            resize_batchnorm_layer(&l, w, h);
             
         }else{
-            error("Cannot resize this type of layer");
+            char buff[256];
+            sprintf(buff, "Cannot resize type: %s\n", layer_type_to_string(l.type));
+            error(buff);
         }
         if(l.workspace_size > workspace_size) workspace_size = l.workspace_size;
         if(l.workspace_size > 2000000000) assert(0);
