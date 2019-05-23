@@ -106,9 +106,7 @@ image load_image_cv(char *filename, int channels)
         return make_image(10,10,3);
         //exit(0);
     }
-    Mat mm;
-    cvtColor(m, mm, CV_RGB2BGR);
-    image im = mat_to_image(mm);
+    image im = mat_to_image(m);
     return im;
 }
 
