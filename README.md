@@ -1,3 +1,8 @@
+# DarkerNet
+Darker than darknet :-)
+
+![![REFER](https://img.shields.io/badge/REFER-darknet-brightgreen.svg)](https://github.com/pjreddie/darknet)
+
 ## Required
 1. [OpenCV(3.4.6)](https://github.com/opencv/opencv/releases)
     ``` shell
@@ -103,11 +108,13 @@
     sudo cp include/cudnn.h /usr/local/cuda-9.0/include/
     sudo cp lib64/libcudnn* /usr/local/cuda-9.0/lib64
     ```
-## Install
+    
+## Installation
 ``` shell
 make
 sudo make install
 sudo echo "# >>> darknet >>>" >> ~/.bashrc
+sudo echo "C_INCLUDE_PATH=/usr/local/darknet/include: /usr/local/darknet/src: $C_INCLUDE_PATH" >> ~/.bashrc
 sudo echo "export LD_LIBRARY_PATH=/usr/local/darknet/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
 sudo echo "# <<< darknet <<<" >> ~/.bashrc
 ```
