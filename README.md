@@ -1,7 +1,7 @@
 # DarkerNet
 Darker than darknet :-)
 
-![![REFER](https://img.shields.io/badge/REFER-darknet-brightgreen.svg)](https://github.com/pjreddie/darknet)
+![![from](https://img.shields.io/badge/REFER-darknet-brightgreen.svg)](https://github.com/pjreddie/darknet)
 
 ## Required
 1. [OpenCV(3.4.6)](https://github.com/opencv/opencv/releases)
