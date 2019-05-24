@@ -677,7 +677,7 @@ layer parse_prelu(list *options, size_params params)
 {
     int n = option_find_int(options, "n", 1);
     
-    layer l = make_prelu_layer(params.batch, params.w, params.h, params.c, n);
+    layer l = make_prelu_layer(params.batch, params.h, params.w, params.c, n);
     return l;
 }
 

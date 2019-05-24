@@ -51,7 +51,7 @@ layer make_prelu_layer(int batch, int h, int w, int c, int n)
     }
 #endif
 
-    fprintf(stderr, "prelu   %3d             %4d x%4d x%4d   ->  %4d x%4d x%4d\n", n, h, w, c, h, w, c);
+    fprintf(stderr, "prelu   %3d             %4d x%4d x%4d   ->  %4d x%4d x%4d\n", n, l.w, l.h, l.c, l.out_w, l.out_h, l.out_c);
 
     return l;
 }
