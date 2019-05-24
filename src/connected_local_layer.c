@@ -111,8 +111,8 @@ void resize_connected_local_layer(layer *l)
 #ifdef GPU
     cuda_free(l->output_gpu);
     cuda_free(l->delta_gpu);
-    l.output_gpu = cuda_make_array(l->output, l->batch*l->outputs);
-    l.delta_gpu = cuda_make_array(l->delta, l->batch*l->outputs);
+    l->output_gpu = cuda_make_array(l->output, l->batch*l->outputs);
+    l->delta_gpu = cuda_make_array(l->delta, l->batch*l->outputs);
 #endif
 }
 
