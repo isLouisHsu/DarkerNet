@@ -61,8 +61,8 @@ layer make_batchnorm_layer(int batch, int w, int h, int c, int use_bias)
     l.mean_delta_gpu = cuda_make_array(l.mean, c);
     l.variance_delta_gpu = cuda_make_array(l.variance, c);
 
-    l.x_gpu = cuda_make_array(l.output, l.batch*l.outputs);
-    l.x_norm_gpu = cuda_make_array(l.output, l.batch*l.outputs);
+    l.x_gpu = cuda_make_array(l.x, l.batch*l.outputs);
+    l.x_norm_gpu = cuda_make_array(l.x_norm, l.batch*l.outputs);
 
 #ifdef CUDNN
     cudnnCreateTensorDescriptor(&l.normTensorDesc);
