@@ -10,3 +10,4 @@ sample/3_mnist/data/train-images-idx3-ubyte
 sample/3_mnist/data/train-labels-idx1-ubyte
 
 cmake-build-debug
+.idea
