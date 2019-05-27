@@ -1,3 +1,8 @@
 .vscode
 *.o
 libdarknet*
+
+./sample/3_mnist/data/images/
+./sample/3_mnist/data/*-ubyte
+./sample/3_mnist/data/list.txt
+
