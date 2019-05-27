@@ -20,6 +20,8 @@ static inline float distance_from_edge(int x, int max)
 }
 void load_data_blocking(load_args args);
 
+list *get_paths(char *filename);
+char **get_random_paths(char **paths, int n, int m);
 
 void print_letters(float *pred, int n);
 data load_data_captcha(char **paths, int n, int m, int k, int w, int h);
