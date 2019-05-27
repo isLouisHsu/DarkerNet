@@ -1,3 +1,0 @@
-/home/louishsu/Work/Codes/DarkerNet/sample/3_mnist/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/louishsu/Work/Codes/DarkerNet/sample/3_mnist/cmake-build-debug/CMakeFiles/mnist.dir
-/home/louishsu/Work/Codes/DarkerNet/sample/3_mnist/cmake-build-debug/CMakeFiles/edit_cache.dir
