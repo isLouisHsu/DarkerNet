@@ -13,7 +13,6 @@ Darker than darknet :-)
     mkdir build && cd build
     cmake ../ -DCMAKE_BUILD_TYPE=RELEASE \
         -DINSTALL_C_EXAMPLES=ON \
-        -DCMAKE_INSTALL_PREFIX=/usr/local \
         -DWITH_TBB=ON \
         -DWITH_EIGEN=ON \
         -DWITH_CUDA=ON \
@@ -22,9 +21,11 @@ Darker than darknet :-)
         -DBUILD_TIFF=ON \
         -DWITH_TIFF=ON \
         -DWITH_GDAL=ON \
-        -DWITH_LIBV4L=ON \
+        -DWITH_LIBV4L=OFF \
+	-DWITH_FFMPEG=ON \
         -DWITH_OPENGL=ON \
-        -DWITH_GTK_2_X=ON
+        -DWITH_GTK_2_X=ON \
+        -DCMAKE_INSTALL_PREFIX=/usr/local
     make
     sudo make install
     ```
