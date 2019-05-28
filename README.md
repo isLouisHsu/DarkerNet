@@ -22,7 +22,7 @@ Darker than darknet :-)
         -DWITH_TIFF=ON \
         -DWITH_GDAL=ON \
         -DWITH_LIBV4L=OFF \
-	-DWITH_FFMPEG=ON \
+	    -DWITH_FFMPEG=ON \
         -DWITH_OPENGL=ON \
         -DWITH_GTK_2_X=ON \
         -DCMAKE_INSTALL_PREFIX=/usr/local
