@@ -148,7 +148,7 @@ void update_connected_local_layer_gpu(layer l, update_args a)
     // TODO
 }
 
-void push_connected_local_layer(layer l)
+void pull_connected_local_layer(layer l)
 {
     cuda_pull_array(l.weights_gpu, l.weights, l.nweights);
     cuda_pull_array(l.weight_updates_gpu, l.weight_updates, l.nweights);
@@ -156,7 +156,7 @@ void push_connected_local_layer(layer l)
     cuda_pull_array(l.bias_updates_gpu, l.bias_updates, l.nbiases);
 }
 
-void pull_connected_local_layer(layer l)
+void push_connected_local_layer(layer l)
 {
     cuda_push_array(l.weights_gpu, l.weights, l.nweights);
     cuda_push_array(l.weight_updates_gpu, l.weight_updates, l.nweights);
