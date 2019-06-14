@@ -134,8 +134,8 @@ void forward_connected_local_layer_gpu(layer l, network net)
         }
     }
 
-    add_bias_gpu(l.output, l.biases, l.batch, l.outputs, 1);
-    activate_array_gpu(l.output, l.batch*l.outputs, l.activation);
+    add_bias_gpu(l.output_gpu, l.biases_gpu, l.batch, l.outputs, 1);
+    activate_array_gpu(l.output_gpu, l.batch*l.outputs, l.activation);
 }
 
 void backward_connected_local_layer_gpu(layer l, network net)
