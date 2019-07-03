@@ -6,7 +6,7 @@ def main():
     images = load_train_images('t10k-images-idx3-ubyte')    # 6000, 784
     labels = load_train_labels('t10k-labels-idx1-ubyte').astype('int')    # 6000
 
-    f = open("list.txt", "w")
+    f = open("list_c.txt", "w")
     cnt = [0 for i in range(10)]    # 0, 0, ..., 0
 
     for i in range(images.shape[0]):

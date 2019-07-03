@@ -59,7 +59,7 @@ int main(int argc, char** argv)
     data train, buffer;
 
     // ========================== load data ========================== //
-    list* plist = get_paths("./data/list.txt");
+    list_c* plist = get_paths("./data/list_c.txt");
     char** paths = (char**)list_to_array(plist);
 
     load_args args = {0};
@@ -107,7 +107,7 @@ int main(int argc, char** argv)
 // int main(int argc, char** argv)
 // {
 //     // ========================== load data ========================== //
-//     list* plist = get_paths("./data/list.txt");
+//     list_c* plist = get_paths("./data/list_c.txt");
 //     char** paths = (char**)list_to_array(plist);
 //     data buffer;
 
