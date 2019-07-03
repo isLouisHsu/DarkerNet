@@ -2,7 +2,7 @@
 *.o
 libdarknet*
 
-sample/3_mnist/data/list.txt
+sample/3_mnist/data/list_c.txt
 sample/3_mnist/data/images/
 sample/3_mnist/data/t10k-images-idx3-ubyte
 sample/3_mnist/data/t10k-labels-idx1-ubyte

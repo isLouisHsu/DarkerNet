@@ -165,7 +165,7 @@ To add new type of layers:
 3. Modify `parser.c`
    1. Modify `LAYER_TYPE string_to_layer_type(char * type)`
    2. Modify `char* layer_type_to_string(LAYER_TYPE lt)`
-   3. Modify `network *parse_network_cfg(char *filename)`, add `layer parse_<layer type>(list *options, size_params params)`;
+   3. Modify `network *parse_network_cfg(char *filename)`, add `layer parse_<layer type>(list_c *options, size_params params)`;
    4. Modify `void save_weights_upto(network *net, char *filename, int cutoff)`, add `void save_<layer type>_weights(layer l, FILE *fp)`
    5. Modify `void load_weights_upto(network *net, char *filename, int start, int cutoff)`, add `void load_<layer type>_weights(layer l, FILE *fp)`
 
