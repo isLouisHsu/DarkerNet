@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "darknet.h"
-#include "list.h"
+#include "list_c.h"
 
 #define TIME(a) \
     do { \
@@ -31,9 +31,9 @@ void malloc_error();
 void file_error(char *s);
 void strip(char *s);
 void strip_char(char *s, char bad);
-list *split_str(char *s, char delim);
+list_c *split_str(char *s, char delim);
 char *fgetl(FILE *fp);
-list *parse_csv_line(char *line);
+list_c *parse_csv_line(char *line);
 char *copy_string(char *s);
 int count_fields(char *line);
 float *parse_fields(char *line, int n);

@@ -6,7 +6,7 @@
 
 void change_leaves(tree *t, char *leaf_list)
 {
-    list *llist = get_paths(leaf_list);
+    list_c *llist = get_paths(leaf_list);
     char **leaves = (char **)list_to_array(llist);
     int n = llist->size;
     int i,j;

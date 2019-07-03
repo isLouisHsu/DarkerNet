@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <string.h>
-#include "list.h"
+#include "list_c.h"
 
-list *make_list()
+list_c *make_list()
 {
-	list *l = malloc(sizeof(list));
+	list_c *l = malloc(sizeof(list_c));
 	l->size = 0;
 	l->front = 0;
 	l->back = 0;
@@ -12,7 +12,7 @@ list *make_list()
 }
 
 /*
-void transfer_node(list *s, list *d, node *n)
+void transfer_node(list_c *s, list_c *d, node *n)
 {
     node *prev, *next;
     prev = n->prev;
@@ -25,7 +25,7 @@ void transfer_node(list *s, list *d, node *n)
 }
 */
 
-void *list_pop(list *l){
+void *list_pop(list_c *l){
     if(!l->back) return 0;
     node *b = l->back;
     void *val = b->val;
@@ -37,7 +37,7 @@ void *list_pop(list *l){
     return val;
 }
 
-void list_insert(list *l, void *val)
+void list_insert(list_c *l, void *val)
 {
 	node *new = malloc(sizeof(node));
 	new->val = val;
@@ -55,7 +55,7 @@ void list_insert(list *l, void *val)
 }
 
 // 2019.05.15
-node* list_index(list* l, int index)
+node* list_index(list_c* l, int index)
 {
 	node* n = l->front;
 	while(index > 0){
@@ -65,7 +65,7 @@ node* list_index(list* l, int index)
 	return n;
 }
 
-void list_delete(list* l, int index)
+void list_delete(list_c* l, int index)
 {
 	node* n = list_index(l, index);
     if(n->next)n->next->prev = n->prev;
@@ -75,7 +75,7 @@ void list_delete(list* l, int index)
 }
 
 // sorted in ascending order
-void list_bsort(list *l, nodeAttr attr)
+void list_bsort(list_c *l, nodeAttr attr)
 {
     for (int i = 0; i < l->size - 1; i++ ){
 		int j = l->size - 1 - i;
@@ -109,9 +109,9 @@ void free_current_node(node *n)
 }
 
 // 2019.05.16
-int list_check(list* l)
+int list_check(list_c* l)
 {
-	if (l->size == 0) return -1;// good list
+	if (l->size == 0) return -1;// good list_c
 
 	int index = 0;
 	node* n = l->front;
@@ -121,14 +121,14 @@ int list_check(list* l)
 
 		if (next){
 			if (next->prev != n) 
-				return index;	// bad list
+				return index;	// bad list_c
 		}
 		n = next;
 	}
-	return -1;					// good list
+	return -1;					// good list_c
 }
 
-void list_attr(list* l, nodeAttr attr)
+void list_attr(list_c* l, nodeAttr attr)
 {
 	node* n = l->front;
 	while(n){
@@ -138,13 +138,13 @@ void list_attr(list* l, nodeAttr attr)
 	printf("\n");
 }
 
-void free_list(list *l)
+void free_list(list_c *l)
 {
 	free_node(l->front);
 	free(l);
 }
 
-void free_list_contents(list *l)
+void free_list_contents(list_c *l)
 {
 	node *n = l->front;
 	while(n){
@@ -153,7 +153,7 @@ void free_list_contents(list *l)
 	}
 }
 
-void **list_to_array(list *l)
+void **list_to_array(list_c *l)
 {
     void **a = calloc(l->size, sizeof(void*));
     int count = 0;

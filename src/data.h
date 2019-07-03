@@ -4,7 +4,7 @@
 
 #include "darknet.h"
 #include "matrix.h"
-#include "list.h"
+#include "list_c.h"
 #include "image.h"
 #include "tree.h"
 
@@ -20,7 +20,7 @@ static inline float distance_from_edge(int x, int max)
 }
 void load_data_blocking(load_args args);
 
-list *get_paths(char *filename);
+list_c *get_paths(char *filename);
 char **get_random_paths(char **paths, int n, int m);
 
 void print_letters(float *pred, int n);

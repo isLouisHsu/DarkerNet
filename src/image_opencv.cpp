@@ -102,7 +102,7 @@ image load_image_cv(char *filename, int channels)
     if(!m.data){
         fprintf(stderr, "Cannot load image \"%s\"\n", filename);
         char buff[256];
-        sprintf(buff, "echo %s >> bad.list", filename);
+        sprintf(buff, "echo %s >> bad.list_c", filename);
         system(buff);
         return make_image(10,10,3);
         //exit(0);
