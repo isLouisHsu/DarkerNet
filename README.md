@@ -47,7 +47,7 @@ Darker than darknet :-)
     ./configure --enable-shared --disable-x86asm
     make
     sudo make install
-    export "export LD_LIBRARY_PATH=/usr/locallib:$LD_LIBRARY_PATH" >> ~/.bashrc
+    export "export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
     source ~/.bashrc
     ```
 
