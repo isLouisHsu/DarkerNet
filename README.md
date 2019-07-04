@@ -44,13 +44,10 @@ Darker than darknet :-)
 
     tar -jxvf ffmpeg-3.4.6.tar.bz2
     cd ffmpeg-3.4.6
-    ./configure --enable-shared --prefix=/usr/local/ffmpeg --disable-x86asm
+    ./configure --enable-shared --disable-x86asm
     make
     sudo make install
-    sudo ln -s /usr/local/ffmpeg/bin/ffmpeg /usr/local/bin/ 
-    sudo ln -s /usr/local/ffmpeg/bin/ffprobe /usr/local/bin/ 
-    sudo ln -s /usr/local/ffmpeg/bin/ffserver /usr/local/bin/
-    export "export LD_LIBRARY_PATH=/usr/local/ffmpeg/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
+    export "export LD_LIBRARY_PATH=/usr/locallib:$LD_LIBRARY_PATH" >> ~/.bashrc
     source ~/.bashrc
     ```
 
