@@ -74,7 +74,7 @@ endif
 OBJS = $(addprefix $(OBJDIR), $(OBJ))
 DEPS = $(wildcard src/*.h) Makefile include/darknet.h
 
-all: obj backup results $(SLIB) $(ALIB) 
+all: obj $(SLIB) $(ALIB) 
 
 $(ALIB): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
@@ -93,10 +93,6 @@ $(OBJDIR)%.o: %.cu $(DEPS)
 
 obj:
 	mkdir -p obj
-backup:
-	mkdir -p backup
-results:
-	mkdir -p results
 
 .PHONY: clean
 clean:
