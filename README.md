@@ -118,7 +118,7 @@ Darker than darknet :-)
 make
 sudo make install
 sudo echo "# >>> darknet >>>" >> ~/.bashrc
-sudo echo "C_INCLUDE_PATH=/usr/local/darknet/include: /usr/local/darknet/src: $C_INCLUDE_PATH" >> ~/.bashrc
+sudo echo "C_INCLUDE_PATH=/usr/local/darknet/include:/usr/local/darknet/src:$C_INCLUDE_PATH" >> ~/.bashrc
 sudo echo "export LD_LIBRARY_PATH=/usr/local/darknet/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
 sudo echo "# <<< darknet <<<" >> ~/.bashrc
 ```
