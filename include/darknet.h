@@ -728,6 +728,7 @@ image resize_max(image im, int max);
 image threshold_image(image im, float thresh);
 image mask_to_rgb(image mask);
 int resize_network(network *net, int w, int h);
+matrix make_matrix(int rows, int cols);
 void free_matrix(matrix m);
 void test_resize(char *filename);
 int show_image(image p, const char *name, int ms);
